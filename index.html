@@ -1,0 +1,188 @@
+<!-- Ramiro Landajo y Martin Ruseff -->
+<!-- La pagina de detalles se encuentra dandole click al primer articulo (Jujutsu Kaisen #0) -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Shop all kinds of Manga and Light Novels with us. With amazing deals, Manga Store is the place for you to shop!">
+    <meta name="keywords" content="Manga, Light Novels, Shop, Store, Books">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manga Store</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo"><div id="contenedor-logo"><a href="index.html">Manga Store</a></div></div>
+            <ul>
+                <li>Products</li>
+                <li>About</li>
+                <li>Contact</li>
+                <img src="images/cart.png" alt="Shopping Cart" id="cart-icon"><img src="images/cart hover.png" alt="Shopping Cart hover" id="cart-icon2">
+            </ul>
+        </nav>
+        <nav class="offCanvas">
+            <img src="images/eliminar.png" alt="Close cart" id="close-cart">
+            <div class="offCanvas-header">
+                <h2>Shopping Cart</h2>
+                <p id="contador-carrito"></p>
+            </div>
+            <div id="carrito"></div>
+        </nav>
+    </header>
+    <div id="dropdown">
+        <button id="dropbtn">Categories</button>
+        <div id="dropdown-content">
+            <li onclick="mostrarTodo();">All</li>
+            <li onclick="mostrarJjk();">Jujustu Kaisen</li>
+            <li onclick="mostrarCsm();">Chainsaw Man</li>
+            <li onclick="mostrarBleach();">Bleach</li>
+        </div>
+      </div>
+    <div>
+        <section>
+
+            <article class="jjk">
+                <a href="detalles.html">
+                <div class="div-article">
+                    <img src="images/jjk0.jpg" alt="Jujustu Kaisen #0" class="images"/>
+                    <h2 id="id1"></h2>
+                </div>
+                <p>Manga: Jujutsu Kaisen Volume 0. From the Shonen Jump magazine in japan, by the author Gege Akutami, currently with more than 65 million copies in circulation</p>
+                <p><strong>Price: $750</strong></p>
+                </a>
+                <div id='div-btn1' class="div-btn"></div>
+            </article>
+
+            <article class="jjk">
+                <div class="div-article">
+                    <img src="images/jjk1.jpg" alt="Jujustu Kaisen #1" class="images"/>
+                    <h2 id="id2"></h2>
+                </div>
+                <p>Manga: Jujutsu Kaisen Volume 1. From the Shonen Jump magazine in japan, by the author Gege Akutami, currently with more than 65 million copies in circulation</p>
+                <p><strong>Price: $750</strong></p>
+                <div id='div-btn2' class="div-btn"></div>
+            </article>
+
+            <article class="jjk">
+                <div class="div-article">
+                    <img src="images/jjk2.png" alt="Jujustu Kaisen #2" class="images"/>
+                    <h2 id="id3"></h2>
+                </div>
+                <p>Manga: Jujutsu Kaisen Volume 2. From the Shonen Jump magazine in japan, by the author Gege Akutami, currently with more than 65 million copies in circulation</p>
+                <p><strong>Price: $750</strong></p>
+                <div id='div-btn3' class="div-btn"></div>
+            </article>
+
+            <article class="jjk">
+                <div class="div-article">
+                    <img src="images/jjk3.jpg" alt="Jujustu Kaisen #3" class="images"/>
+                    <h2 id="id4"></h2>
+                </div>
+                <p>Manga: Jujutsu Kaisen Volume 3. From the Shonen Jump magazine in japan, by the author Gege Akutami, currently with more than 65 million copies in circulation</p>
+                <p><strong>Price: $750</strong></p>
+                <div id='div-btn4' class="div-btn"></div>
+            </article>
+
+            <article class="csm">
+                <div class="div-article">
+                    <img src="images/csm1.jpg" alt="Chainsaw Man #1" class="images"/>
+                    <h2 id="id5"></h2>
+                </div>
+                <p>Manga: Chainsaw Man Volume 1. From the Shonen Jump magazine in japan, by the author Tatsuki Fujimoto, currently with more than 11 million copies in circulation</p>
+                <p><strong>Price: $700</strong></p>
+                <div id='div-btn5' class="div-btn"></div>
+            </article>
+
+            <article class="csm">
+                <div class="div-article">
+                    <img src="images/csm2.jpg" alt="Chainsaw Man #2" class="images"/>
+                    <h2 id="id6"></h2>
+                </div>
+                <p>Manga: Chainsaw Man Volume 2. From the Shonen Jump magazine in japan, by the author Tatsuki Fujimoto, currently with more than 11 million copies in circulation</p>
+                <p><strong>Price: $700</strong></p>
+                <div id='div-btn6' class="div-btn"></div>
+            </article>
+
+            <article class="csm">
+                <div class="div-article">
+                    <img src="images/csm3.jpg" alt="Chainsaw Man #3" class="images"/>
+                    <h2 id="id7"></h2>
+                </div>
+                <p>Manga: Chainsaw Man Volume 3. From the Shonen Jump magazine in japan, by the author Tatsuki Fujimoto, currently with more than 11 million copies in circulation</p>
+                <p><strong>Price: $700</strong></p>
+                <div id='div-btn7' class="div-btn"></div>
+            </article>
+
+            <article class="csm">
+                <div class="div-article">
+                    <img src="images/csm4.jpg" alt="Chainsaw Man #4" class="images"/>
+                    <h2 id="id8"></h2>
+                </div>
+                <p>Manga: Chainsaw Man Volume 4. From the Shonen Jump magazine in japan, by the author Tatsuki Fujimoto, currently with more than 11 million copies in circulation</p>
+                <p><strong>Price: $700</strong></p>
+                <div id='div-btn8' class="div-btn"></div>
+            </article>
+
+            <article class="bleach">
+                <div class="div-article">
+                    <img src="images/Bleach8.jpg" alt="Bleach #8" class="images"/>
+                    <h2 id="id9"></h2>
+                </div>
+                <p>Manga: Bleach Volume 8. From the Shonen Jump magazine in japan, by the author Tite Kubo, currently with more than 90 million copies in circulation</p>
+                <p><strong>Price: $800</strong></p>
+                <div id='div-btn9' class="div-btn"></div>
+            </article>
+
+            <article class="bleach">
+                <div class="div-article">
+                    <img src="images/Bleach13.jpg" alt="Bleach #13" class="images"/>
+                    <h2 id="id10"></h2>
+                </div>
+                <p>Manga: Bleach Volume 13. From the Shonen Jump magazine in japan, by the author Tite Kubo, currently with more than 90 million copies in circulation</p>
+                <p><strong>Price: $800</strong></p>
+                <div id='div-btn10' class="div-btn"></div>
+            </article>
+
+            <article class="bleach">
+                <div class="div-article">
+                    <img src="images/Bleach25.jpg" alt="Bleach #25" class="images"/>
+                    <h2 id="id11"></h2>
+                </div>
+                <p>Manga: Bleach Volume 25. From the Shonen Jump magazine in japan, by the author Tite Kubo, currently with more than 90 million copies in circulation</p>
+                <p><strong>Price: $800</strong></p>
+                <div id='div-btn11' class="div-btn"></div>
+            </article>
+
+            <article class="bleach">
+                <div class="div-article">
+                    <img src="images/Bleach57.jpg" alt="Bleach #57" class="images"/>
+                    <h2 id="id12"></h2>
+                </div>
+                <p>Manga: Bleach Volume 57. From the Shonen Jump magazine in japan, by the author Tite Kubo, currently with more than 90 million copies in circulation</p>
+                <p><strong>Price: $800</strong></p>
+                <div id='div-btn12' class="div-btn"></div>
+            </article>
+        </section>
+    </div>
+    <footer>
+        <div id="big-logo"><p>Manga Store</p></div>
+        <div class="div-list">
+            <ul>
+                <li>About Us</li>
+                <li>Who We Are</li>
+                <li>Our Mission</li>
+                <li>Our Vission</li>
+            </ul>
+        </div>
+        <div class="div-list">
+            <ul>
+                <li>Contact Us</li>
+                <li>Where We Are</li>
+                <li>Job Offers</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="javascript.js"></script>
+</body>
+</html>

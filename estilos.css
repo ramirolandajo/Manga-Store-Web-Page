@@ -1,0 +1,681 @@
+/* Ramiro Landajo y Martin Ruseff */
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto:wght@300;400;500&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* DECLARANDO VARIABLES */
+:root {
+    --grisOscuro: #2e332f;
+    --gris: #9a9e9b;
+    --grisClaro: #bdbebd;
+    --azul: #7fc0b7;
+    --celeste: #a8ece7;
+    --turquesa: rgb(63, 207, 162);
+    --turquesaClaro: rgb(78, 241, 190);
+    --fuente1: 'Kdam Thmor Pro';
+}
+/* PARA ESTILIZAR EL SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 90%;
+    background-color: var(--grisOscuro);
+}
+::-webkit-scrollbar-track {
+    background-color: var(--grisClaro);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--gris);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #808581;
+}
+
+body {
+    background-color: #EAECEA;
+    transition: all 300ms;
+    overflow-x: hidden;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+/* NAV PRINCIPAL */
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: var(--grisOscuro);
+    color: white;
+    font-family: var(--fuente1), sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: opacity 250ms ease-out;
+}
+nav ul {
+    margin-inline: 5em;
+}
+nav ul li{
+    display: inline-block;
+    
+    margin: 1.25em;
+    padding-inline: 1em;
+    padding-block: 0.1em;
+    border-radius: 100vmax;
+    transition: background-color ease-out 400ms;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+nav ul li:hover {
+    background-color: var(--turquesa);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+#cart-icon {
+    position: absolute;
+    display: block;
+    right: 30px;
+    top: 29px;
+    height: 40px;
+    width: 40px;
+}
+#cart-icon2 {
+    position: absolute;
+    right: 30px;
+    top: 29px;
+    height: 40px;
+    width: 40px;
+    opacity: 0;
+    transition: all 400ms ease-out;
+}
+#cart-icon2:hover {
+    opacity: 1;
+    transition: all 400ms ease-out;
+}
+#logo {
+    position: absolute;
+    left: 0;
+    margin: 1.25em;
+}
+#contenedor-logo {
+    position: relative;
+    font-size: 2.4vw;
+}
+#contenedor-logo::before {
+    content: '';
+    height: 5px;
+    width: 2.4vw;
+    position: absolute;
+    border-radius: 10px;
+    background-color: var(--turquesa);
+}
+#contenedor-logo::after {
+    content: '';
+    height: 5px;
+    width: 2.8vw;
+    position: absolute;
+    border-radius: 10px;
+    bottom: 0;
+    right: 0;
+    background-color: var(--turquesa);
+}
+
+/* Carrito / Offcanvas */
+.offCanvas {
+    color: var(--grisOscuro);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1em;
+    width: 400px;
+    height: 100vh;
+    background-color: var(--gris);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    overflow-y: auto;
+}
+.offCanvas ul {
+    margin: 0;
+}
+.offCanvas-header {
+    position: relative;
+    padding-inline: 0.5em;
+}
+.offCanvas-header::after {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 100%;
+    bottom: -10px;
+    background-color: var(--turquesa);
+}
+.div-li-carrito {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+.div-btn-li {
+    display: flex;
+    flex-direction: row;
+}
+.item-carrito {
+    position: relative;
+    width: 100%;
+    border-radius: 0;
+    font-size: 1rem;
+    padding: 0;
+    background-color: inherit;
+    margin: 0.25em;
+    display: flex;
+    flex-direction: row;
+}
+.item-carrito:hover, .item-carrito:last-child:hover {
+    background-color: var(--gris);
+    cursor: default;
+}
+
+.img-carrito {
+    width: 90px;
+    aspect-ratio: 2 1;
+}
+.show-offCanvas {
+    transform: translateX(-400px);
+    transition: all 300ms;
+}
+#carrito {
+    padding: 1em;
+}
+.precio-carrito {
+    padding: 1em;
+    font-size: 1rem;
+}
+.div-agregar-carrito {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+.div-agregar-carrito > div {
+    width: 70%;
+    padding-inline: 2em;
+    border: 1px solid var(--gris);
+    border-radius: 5px;
+}
+.div-agregar-carrito h2 {
+    font-family: var(--fuente1), sans-serif;
+    font-size: 2.1rem;
+}
+.btn-vaciar {
+    width: 100%;
+    margin: 1em;
+    padding-block: 0.75em;
+    background-color: var(--turquesa);
+    color: var(--grisOscuro);
+    font-family: var(--fuente1), sans-serif;
+    font-size: 1.5rem;
+    border: 0px;
+}
+.btn-vaciar:hover {
+    background-color: var(--turquesaClaro);
+}
+.btn-li {
+    width: 30%;
+    height: 30px;
+    background-color: var(--turquesa);
+    font-family: var(--fuente1), sans-serif;
+    border: 0;
+    border-radius: 3px;
+    margin: 0.25em;
+}
+.btn-li:hover {
+    background-color: var(--turquesaClaro);
+}
+#close-cart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    margin: 1em;
+}
+
+/* Main body */
+#dropbtn {
+    background-color: var(--grisClaro);
+    color: white;
+    padding: 16px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    font-family: var(--fuente1);
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+#dropdown {
+    position: relative;
+    display: inline-block;
+    left: 3em;
+    top: 1em;
+    bottom: 1em;
+    margin-bottom: 1em;
+}
+#dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+#dropdown-content li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    font-family: "kdam Thmor Pro";
+}
+  
+#dropdown-content li:hover {
+    background-color: #f1f1f1
+}
+
+#dropdown:hover #dropdown-content {
+    display: block;
+}
+#dropdown:hover #dropbtn {
+    background-color: var(--gris);
+}
+/* Secciones */
+section {
+    margin-block: 1em;
+    margin-inline: 1.25em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+article {
+    background-color: #fff;
+    border: 1.5px solid var(--grisClaro);
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px var(--gris);
+    padding: 1.25em;
+    position: relative;
+}
+article:hover {
+    transition: all 0.2s ease-out;
+    transform: scale(1.02);
+    box-shadow: 0px 5px 15px var(--gris);
+    border: 1.5px solid var(--grisOscuro);
+}
+article p {
+    margin-bottom: 1em;
+    font-family: Roboto;
+    font-weight: 400;
+}
+article strong {
+    font-size: 1.25rem;
+}
+.div-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1.25em;
+}
+.div-article h2 {
+    font-family: var(--fuente1), sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.images {
+    height: 225px;
+    width: 150px;
+    margin-bottom: 1em;
+}
+.div-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn {
+    background-color: var(--turquesa);
+    border: 1px solid var(--grisOscuro);
+    border-radius: 5px;
+    padding: 1em;
+    font-family: var(--fuente1), sans-serif;
+    margin: 1em;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: var(--turquesaClaro);
+}
+/* footer */
+footer {
+    height: 200px;
+    width: 100%;
+    padding-block: 2em;
+    padding-inline: 1em;
+    background-color: var(--grisOscuro);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-content: center;
+    color: white;
+    font-family: var(--fuente1), sans-serif;
+}
+.div-list {
+    display: flex;
+    justify-content: center;
+    padding-inline: 2em;
+}
+footer ul {
+    list-style: none;
+}
+footer ul li {
+    padding: 0.5em;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#big-logo {
+    font-size: 4vw;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+#big-logo p {
+    position: relative;
+}
+#big-logo p::before {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 5vw;
+    top: 0;
+    background-color: var(--turquesa);
+    border-radius: 5px;
+}
+#big-logo p::after {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 5vw;
+    bottom: 0px;
+    right: 0px;
+    background-color: var(--turquesa);
+    border-radius: 5px;
+}
+
+/* PAGINA DETALLES */
+
+#container-detalles {
+    width: 100%;
+    padding: 1em;
+    display: flex;
+}
+
+.img-detalles {
+    height: 500px;
+    width: 400px;
+    margin-inline: 3em;
+}
+
+.div-descripcion {
+    width: 40%;
+    margin-right: 1em;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.div-descripcion h2 {
+    font-family: var(--fuente1), sans-serif;
+    position: relative;
+    padding-bottom: 0.5em;
+}
+
+.div-descripcion h2::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--turquesa);
+    border-radius: 100vmax;
+}
+
+#container-detalles p {
+    margin-top: 1.5em;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 1.25rem;
+}
+
+#boton-detalles {
+    height: 3.5rem;
+    margin-block: 2em;
+    width: 100%;
+    background-color: var(--turquesa);
+    border: 1px solid var(--grisOscuro);
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-family: "Kdam Thmor Pro", sans-serif;
+    cursor: pointer;
+}
+
+#boton-detalles:hover {
+    background-color: var(--turquesaClaro);
+}
+
+/* Media Queries */
+/* A veces se rompe si lo haces scrolleando el tamaño, pero si analizas en cada breakpoint se ve bien :D */
+/* Solo falta responsive en la pagina detalles, se complico mucho */
+@media screen and (max-width: 1024px) {
+    section {
+        grid-template-columns: repeat(3, 1fr);
+    }    
+}
+@media screen and (max-width: 950px) {
+    section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        font-size: 13px;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        position: sticky;
+        top: 0;
+    }
+    nav ul {
+        margin-block: -0.5em;
+        height: 50%;
+        display: flex;
+        width: 80%;
+        overflow: auto;
+    }
+    nav ul li {
+        font-size: 1rem;
+        margin: 1em;
+    }
+    #logo {
+        top: 0;
+    }
+    #contenedor-logo {
+        font-size: 6vw;
+    }
+    #contenedor-logo::before {
+        width: 30px;
+    }
+    #contenedor-logo::after {
+        width: 30px;
+        right: 0;
+    }
+    #cart-icon {
+        height: 20px;
+        width: 20px;
+        right: 10%;
+        top: 60px;
+    }
+    #cart-icon2 {
+        height: 20px;
+        width: 20px;
+        right: 10%;
+        top: 60px;
+    }
+    #carrito ul {
+        display: flex;
+        flex-direction: column;
+    }
+    section {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        width: 80px;
+        height: 30px;
+        padding: 0;
+        font-size: 1rem;
+    }
+    #big-logo {
+        font-size: 1.5rem;
+    }
+    #big-logo p::before, #big-logo p::after {
+        height: 7px;
+        width: 35px;
+    }
+    #big-logo p::before {
+        top: -5px;
+    }
+    #big-logo p::after {
+        bottom: -5px;
+        right: 0;
+    }
+    .offCanvas {
+        height: 200vh;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        font-size: 14px;
+    }
+    header {
+        position: sticky;
+        top: 0;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        height: 120px;
+        min-width: 310px;
+        position: sticky;
+        top: 0;
+    }
+    nav ul {
+        display: flex;
+        min-width: 310px;
+        overflow: auto;
+        margin: 0;
+    }
+    nav ul li {
+        font-size: 1rem;
+        margin: 1em;
+    }
+    #logo {
+        top: 0;
+    }
+    #contenedor-logo {
+        font-size: 6vw;
+    }
+    #contenedor-logo::before {
+        width: 30px;
+    }
+    #contenedor-logo::after {
+        width: 30px;
+        right: 0;
+    }
+    #cart-icon {
+        height: 30px;
+        width: 30px;
+        right: 30%;
+        top: 25px;
+    }
+    #cart-icon2 {
+        height: 30px;
+        width: 30px;
+        right: 30%;
+        top: 25px;
+    }
+    #carrito ul {
+        display: flex;
+        flex-direction: column;
+    }
+    section {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        width: 80px;
+        height: 30px;
+        padding: 0;
+        font-size: 1rem;
+    }
+    footer {
+        display: grid;
+        grid-template-columns: 40% 30% 30%;
+    }
+    #big-logo {
+        font-size: 1.25rem;
+    }
+    #big-logo p::before, #big-logo p::after {
+        height: 7px;
+        width: 35px;
+    }
+    #big-logo p::before {
+        top: -5px;
+    }
+    #big-logo p::after {
+        bottom: -5px;
+        right: 0px;
+    }
+    footer ul li:nth-child(n+3) {
+        display: none;
+    }
+    .show-offCanvas {
+        transform: translateX(-300px);
+        transition: all 300ms;
+    }
+    .offCanvas {
+        height: 200vh;
+        width: 300px;
+    }
+    .offCanvas ul {
+        overflow-x: hidden;
+    }
+}
